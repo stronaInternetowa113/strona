@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Greenhouse</title>
+	<link rel="stylesheet" type="text/css" href="css.css"> 
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		
+		<script type="text/javascript">
+		
+			var numer = Math.floor(Math.random()*5)+1;
+			
+			var timer1 = 0;
+			var timer2 = 0;
+			
+			function ustawslajd(nrslajdu)
+			{
+				clearTimeout(timer1);
+				clearTimeout(timer2);
+				numer = nrslajdu - 1;
+				
+				schowaj();
+				setTimeout("zmienslajd()", 500);
+				
+			}
+			
+			function schowaj()
+			{
+				$("#slider").fadeOut(500);
+			}
+		
+			function zmienslajd()
+			{
+				numer++; if (numer>5) numer=1;
+				
+				var plik = "<img class='img' src=\"slajdy/slajd" + numer + ".jpg\" />";
+				
+				document.getElementById("slider").innerHTML = plik;
+				$("#slider").fadeIn(500);
+				
+				timer1 = setTimeout("zmienslajd()", 3000);
+				timer2 = setTimeout("schowaj()", 2500);
+			
+			}
+			
+		</script>
+		</head>
+		<body onload="zmienslajd()">
+		<span onclick="ustawslajd(1)" style="cursor:pointer;">[ 1 ]</span>
+		<span onclick="ustawslajd(2)" style="cursor:pointer;">[ 2 ]</span>
+		<span onclick="ustawslajd(3)" style="cursor:pointer;">[ 3 ]</span>
+		<span onclick="ustawslajd(4)" style="cursor:pointer;">[ 4 ]</span>
+		<span onclick="ustawslajd(5)" style="cursor:pointer;">[ 5 ]</span>
+		<div id="slider"></div>
+		</body>
