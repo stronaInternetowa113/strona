@@ -3,7 +3,7 @@ body
 	background-color: lightyellow;
 	font-family: Verdana;
 	font-size: 20px; 
-	
+	margin: 0;
 }
 .img {
   width: 300px;
@@ -12,6 +12,9 @@ body
 .main-side {
   width: 250px;
   margin-top: 20px;
+}
+main {
+  display: flex;
 }
 header
 {
@@ -26,7 +29,7 @@ header
 
 .left {
   background: #99ff99;
-  width: 25%;
+  width: 30%;
   height: 500px;
   padding-top: 100px;
   font-size: 20px;
@@ -40,7 +43,7 @@ header
 .right {
   background: #e6ffe6;
   height: 500px;
-  width: 50%;
+  width: 100%;
   padding-top: 100px;
   font-size: 20px;
   display: flex;
@@ -48,12 +51,14 @@ header
   align-items: center;
   float: left;
   text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .zdjecia
 {
   background: #99ff99;
   height: 500px;
-  width: 25%;
+  width: 30%;
   padding-top: 100px;
   font-size: 20px;
   display: flex;
